@@ -1,5 +1,16 @@
 ## dotnet-ts-colocation-issue
 
+**update**
+
+The fix is adding this to the .csproj. Please see [https://github.com/dotnet/aspnetcore/issues/41921#issuecomment-1141158926](https://github.com/dotnet/aspnetcore/issues/41921#issuecomment-1141158926)
+
+```xml
+<PropertyGroup>    
+    <PrepareForBuildDependsOn>GetTypeScriptOutputForPublishing;$(PrepareForBuildDependsOn)</PrepareForBuildDependsOn>  
+</PropertyGroup>
+```
+
+-------
 
 I have a `dotnet new razor` project with `Microsoft.TypeScript.MSBuild` and `BuildBundlerMinifier` added so that I can write TypeScript first, then minify the compiled JavaScript further
 
